@@ -24,5 +24,17 @@ namespace Symmetry_Rectangle_Example
         {
             InitializeComponent();
         }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                rect.Width = double.Parse((sender as TextBox).Text);
+            }
+            catch
+            {
+
+            }
+        }
     }
 }

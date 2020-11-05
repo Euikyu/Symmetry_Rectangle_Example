@@ -4,9 +4,18 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Symmetry_Rectangle_Example"
+        xmlns:u="clr-namespace:Symmetry_Rectangle_Example.UserControls"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="307*"/>
+            <ColumnDefinition Width="89*"/>
+        </Grid.ColumnDefinitions>
+        <Canvas>
+            <u:SymmetryRectangle x:Name="rect" Canvas.Left="{Binding RelativeSource={RelativeSource Self}, Path=OriginX}" Canvas.Top="{Binding RelativeSource={RelativeSource Self}, Path=OriginY}" Width="100" Height="100"/>
+        </Canvas>
+
+        <TextBox Grid.Column="1" TextChanged="TextBox_TextChanged"/>
     </Grid>
 </Window>
